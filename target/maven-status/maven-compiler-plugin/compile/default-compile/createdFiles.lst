@@ -1,0 +1,6 @@
+com\example\demo\config\LoadDatabase.class
+com\example\demo\controller\UserTikTokController.class
+com\example\demo\exception\UserTikTokNotFoundException.class
+com\example\demo\repositories\UserTikTokRepository.class
+com\example\demo\Demo3Application.class
+com\example\demo\model\UserTikTok.class
