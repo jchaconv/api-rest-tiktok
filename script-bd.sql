@@ -27,3 +27,13 @@ CREATE TABLE `db_tik_tok`.`users` (
   (1,'Samyr','','samyr1726','No hay descripción corta',46,1400,10,0,'es un morrito',now(),now(),1),
   (1,'Flor','','flornoemy24','sígueme y te sigo',635,894,402,0,'la descripción jaja',now(),now(),1),
   (1,'Bruno','Jaramillo','brunojaramilloe','No hay descripción corta',65,143,211,0,'será ese el color de su cabello?',now(),now(),1);
+
+
+create user 'myuserone'@localhost
+identified by 'myuseronepass';
+
+GRANT ALL PRIVILEGES ON *.* TO 'myuserone'@localhost;
+
+
+
+
