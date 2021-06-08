@@ -1,6 +1,6 @@
-D:\jchaconv\proyectos-java\demo3\src\main\java\com\example\demo\repositories\UserTikTokRepository.java
-D:\jchaconv\proyectos-java\demo3\src\main\java\com\example\demo\exception\UserTikTokNotFoundException.java
-D:\jchaconv\proyectos-java\demo3\src\main\java\com\example\demo\controller\UserTikTokController.java
-D:\jchaconv\proyectos-java\demo3\src\main\java\com\example\demo\config\LoadDatabase.java
-D:\jchaconv\proyectos-java\demo3\src\main\java\com\example\demo\Demo3Application.java
-D:\jchaconv\proyectos-java\demo3\src\main\java\com\example\demo\model\UserTikTok.java
+D:\jchaconv\apis\api-rest-tiktok\src\main\java\com\example\demo\exception\UserTikTokNotFoundException.java
+D:\jchaconv\apis\api-rest-tiktok\src\main\java\com\example\demo\config\LoadDatabase.java
+D:\jchaconv\apis\api-rest-tiktok\src\main\java\com\example\demo\controller\UserTikTokController.java
+D:\jchaconv\apis\api-rest-tiktok\src\main\java\com\example\demo\Demo3Application.java
+D:\jchaconv\apis\api-rest-tiktok\src\main\java\com\example\demo\repositories\UserTikTokRepository.java
+D:\jchaconv\apis\api-rest-tiktok\src\main\java\com\example\demo\model\UserTikTok.java

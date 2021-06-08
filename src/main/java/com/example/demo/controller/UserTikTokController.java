@@ -3,9 +3,13 @@ package com.example.demo.controller;
 import com.example.demo.exception.UserTikTokNotFoundException;
 import com.example.demo.model.UserTikTok;
 import com.example.demo.repositories.UserTikTokRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -19,57 +23,22 @@ public class UserTikTokController {
     }
 
     //Es triste amar sin ser amado u.u
-    //Pero más triste es cerrar word sin haber guardado ToT
+    //Pero más triste es cerrar word sin
+    // haber guardado ToT
 
-    @GetMapping(path="/all")
+    @GetMapping(path="/users")
     public @ResponseBody Iterable<UserTikTok> getAllUsers() {
         // This returns a JSON or XML with the users
         return repository.findAll();
     }
-    /*
-    @GetMapping("/users")
-    List<UserTikTok> all() {
-        return repository.findAll();
-    }*/
-    /*
-    @GetMapping("/users/{id}")
-    UserTikTok one(@PathVariable Long id) {
 
-        return repository.findById(id)
-                .orElseThrow(() -> new UserTikTokNotFoundException(id));
-    }*/
+    @PostMapping(path="/add")
+    public ResponseEntity<UserTikTok> create(@RequestBody UserTikTok userTikTok) {
+        UserTikTok created = repository.save(userTikTok);
 
-    /*
-    @PostMapping("/users")
-    UserTikTok newUser(@RequestBody UserTikTok newUserTikTok) {
-        return repository.save(newUserTikTok);
-    }*/
-    /*
-    @PutMapping("/users/{id}")
-    UserTikTok replaceEmployee(@RequestBody UserTikTok newUserTikTok, @PathVariable Long id) {
+        return new ResponseEntity<UserTikTok>(HttpStatus.CREATED);
+    }
 
-        return repository.findById(id)
-                .map(userOfTikTok -> {
-
-                    userOfTikTok.setName(newUserTikTok.getName());
-                    userOfTikTok.setNickname(newUserTikTok.getNickname());
-                    userOfTikTok.setDescription(newUserTikTok.getDescription());
-                    userOfTikTok.setNumberOfFollowers(newUserTikTok.getNumberOfFollowers());
-                    userOfTikTok.setNumberOfViewers(newUserTikTok.getNumberOfViewers());
-                    userOfTikTok.setNumberOfLikes(newUserTikTok.getNumberOfLikes());
-                    return repository.save(userOfTikTok);
-                })
-                .orElseGet(() -> {
-                    newUserTikTok.setId(id);
-                    return repository.save(newUserTikTok);
-                });
-    }*/
-
-
-
-    /*List<UserTikTok> saveAll(@RequestBody List<UserTikTok> newUserTikTok){
-        return repository.save(newUserTikTok);
-    }*/
 
 
 }
