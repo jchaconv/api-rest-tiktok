@@ -57,6 +57,11 @@ public class UserTikTokController {
                 });
     }
 
+    //METODO QUE ELIMINA USUARIOS
+    @DeleteMapping(path= "/users/{id}")
+    public void deleteUserTikTok(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 
 
 }
