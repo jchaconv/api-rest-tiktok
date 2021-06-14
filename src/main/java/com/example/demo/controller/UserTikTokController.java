@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
-
 
 @RestController
 @RequestMapping("/api/v1")
@@ -37,6 +37,12 @@ public class UserTikTokController {
         return new ResponseEntity<UserTikTok>(HttpStatus.CREATED);
     }
 
+    @PostMapping(path="/saveall")
+    public List<UserTikTok> saveAllUsers(@RequestBody List<UserTikTok> userList){
+        List<UserTikTok> userResponse = (List<UserTikTok>) repository.saveAll(userList);
+        return userResponse;
+    }
+
     @PutMapping(path= "/users/{id}")
     public UserTikTok replaceUserTikTok(@RequestBody UserTikTok newUserTikTok,
                                         @PathVariable Long id){
@@ -57,11 +63,10 @@ public class UserTikTokController {
                 });
     }
 
-    //METODO QUE ELIMINA USUARIOS
     @DeleteMapping(path= "/users/{id}")
     public void deleteUserTikTok(@PathVariable Long id){
         repository.deleteById(id);
-    }
 
+    }
 
 }
